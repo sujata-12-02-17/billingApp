@@ -33,7 +33,7 @@ public class CustomerController {
         }
 
         @PutMapping("update-customer")
-        public Customer updateStudent(@RequestBody Customer customer) {
+        public Customer updateCustomer(@RequestBody Customer customer) {
             return customerService.updateCustomer(customer);
         }
 

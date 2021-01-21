@@ -16,5 +16,7 @@ public class Discount {
     @Id
     private Long id;
     private String discountCode;
+    private String value;
+    private String description;
     private String typeOfDiscount;
 }
