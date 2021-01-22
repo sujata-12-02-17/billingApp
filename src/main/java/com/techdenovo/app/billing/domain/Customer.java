@@ -25,6 +25,9 @@ public class Customer {
     private Long customerCode;
     private int GSTIN;
     private String address;
+    private String country;
+    private String state;
+    private String city;
     private int pinCode;
 
 

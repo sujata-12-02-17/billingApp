@@ -30,13 +30,22 @@ public class CustomerService {
         return  customerRepositry.save(customer);
     }
 
-    public Customer updateCustomer(Customer customer){
+    public Customer updateCustomer(Customer customer, long id){
+         Customer existingCustomer=customerRepositry.findById(id).orElse(null);
+         if(existingCustomer!=null) {
+             existingCustomer.setFirstName(customer.getFirstName());
+             existingCustomer.setLastName(customer.getLastName());
+             existingCustomer.setEmail(customer.getEmail());
+             existingCustomer.setMobileNo(customer.getMobileNo());
+             existingCustomer.setAddress(customer.getAddress());
+             existingCustomer.setGSTIN(customer.getGSTIN());
+             existingCustomer.setCustomerCode(customer.getCustomerCode());
 
+             existingCustomer.setPinCode(customer.getPinCode());
 
+         }
 
-
-
-        return customerRepositry.save(customer);
+        return customerRepositry.save(existingCustomer);
     }
 
     public Message deleteCustomer(long id){
